@@ -200,3 +200,54 @@ export interface NovaRenovacaoInput {
 }
 
 export type ScoreClassificacao = 'excelente' | 'bom' | 'regular' | 'ruim'
+
+export type CodigoPlano = 'free' | 'basico' | 'pro' | 'pro_max'
+
+export interface Plano {
+  codigo: CodigoPlano
+  nome: string
+  preco_mensal: number
+  limite_ativos: number | null
+  descricao: string
+  destaque: boolean
+  ativo: boolean
+}
+
+export type StatusAssinatura = 'ativa' | 'pendente' | 'atrasada' | 'cancelada'
+
+export interface Assinatura {
+  id: string
+  credor_id: string
+  plano_codigo: CodigoPlano
+  status: StatusAssinatura
+  asaas_customer_id: string | null
+  asaas_subscription_id: string | null
+  data_proxima_cobranca: string | null
+  data_inicio: string
+  data_cancelamento: string | null
+  created_at: string
+  updated_at: string
+}
+
+export interface ResumoPlano {
+  codigo: CodigoPlano
+  nome: string
+  preco_mensal: number
+  limite_ativos: number | null
+  ativos: number
+  restantes: number | null
+}
+
+export interface CheckoutPix {
+  encodedImage: string
+  payload: string
+}
+
+export interface CheckoutResult {
+  ok: boolean
+  status?: string
+  plano?: CodigoPlano
+  asaas_subscription_id?: string
+  pix?: CheckoutPix | null
+  error?: string
+}

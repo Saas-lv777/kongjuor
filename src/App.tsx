@@ -25,6 +25,7 @@ import { Simulador } from '@/pages/app/Simulador'
 import { Configuracoes } from '@/pages/app/Configuracoes'
 import { MeuPerfil } from '@/pages/app/MeuPerfil'
 import { AlterarSenha } from '@/pages/app/AlterarSenha'
+import { Planos } from '@/pages/app/Planos'
 
 export function App() {
   return (
@@ -58,6 +59,7 @@ export function App() {
             <Route path="/relatorios" element={<Relatorios />} />
             <Route path="/simulador" element={<Simulador />} />
             <Route path="/configuracoes" element={<Configuracoes />} />
+            <Route path="/planos" element={<Planos />} />
             <Route path="/perfil" element={<MeuPerfil />} />
             <Route path="/alterar-senha" element={<AlterarSenha />} />
           </Route>
